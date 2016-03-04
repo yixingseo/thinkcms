@@ -1,0 +1,36 @@
+<include file="index:meta" />
+
+<body class="abody">
+
+<h3>数据库备份</h3>
+<!-- 操作 -->
+<div class="tools">     
+<div class="form-inline">
+  <div class="form-group">
+    <a href="__URL__/backup" class="btn btn-primary">备份当前数据库</a>
+  </div>
+</div>   
+
+</div>
+
+<table class="table table-bordered table-hover">
+  <tr>
+    <th>名称</th>
+    <th>大小</th> 
+    <th>操作</th>
+  </tr>
+<volist name="data" id="vo">
+  <tr>
+    <td><span class="text-primary">{$vo.name}</span></td>
+    <td>{$vo.size}b</td>
+    <td class="listview_action">
+    <a href="__URL__/import/file/{$vo.name}"><i class="fa fa-undo"></i> 恢复</a>&nbsp;&nbsp;
+    <a href="__URL__/del/file/{$vo.name}" onclick="return confirm('确定要删除吗')"><i class="fa fa-trash"></i> 删除</a>
+    </td>
+  </tr>
+</volist>
+
+</table>
+</body>
+
+<include file="index:footer" />

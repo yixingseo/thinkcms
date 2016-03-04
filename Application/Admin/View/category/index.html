@@ -1,0 +1,41 @@
+<include file="index:meta" />
+
+<body class="abody">
+
+<h3>分类管理 <small><a href="__URL__/add">添加</a></small></h3>
+
+
+<table width="100%" class="table table-bordered table-hover">
+  <tr>
+    <th style="width:80px;">编号</th>
+    <th>分类名称</th>
+    <th class="text-center">列表</th>
+    <th class="text-center">导航</th>
+    <th>分类模板</th>
+    <th>内容模板</th>
+    <th class="text-center">排序</th>
+    <th>操作</th>
+  </tr>
+
+<volist name="list" id="vo" empty="$empty">
+
+<tr>
+  <td>{$vo.id}</td>
+  <td>{$vo.tag} {$vo.title}</td>
+  <td class="text-center"></td>
+  <td class="text-center"></td>
+  <td></td>
+  <td></td>
+  <td class="weight">{$vo.weight}</td>
+  <td>
+    <a href="__URL__/add/parent/{$vo.id}"><i class="fa fa-plus"></i> 添加小类</a>
+    <a href="__URL__/edit/id/{$vo.id}"><i class="fa fa-pencil"></i> 修改</a>
+    <a href="__URL__/delete/id/{$vo.id}" onclick="return confirm('确定要删除吗？')"><i class="fa fa-trash-o"></i> 删除</a>
+  </td>
+</tr>
+
+</volist>
+
+</table>
+
+<include file="index:footer" />
