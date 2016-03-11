@@ -1,12 +1,16 @@
 <include file="index:meta" />
-</head>
+<body class="abody">
+
+<!-- 编辑器 -->
+<script src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+<script src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
 <body class="adminbody">
 
 <form action="__URL__/insert" method="post">
 
 <div class="container-fluid">
 
-  <h3 class="title">内容管理 <small><a href="__URL__/index">列表</a></small></h3>
+  <h3 class="admin-title">内容管理 <small><a href="__URL__/index">列表</a></small></h3>
   <div class="row">
       <!-- left -->
       <div class="col-xs-9 form-horizontal">
@@ -117,5 +121,9 @@
 </div>
 
 </form>  
+
+<script>
+    var ue = UE.getEditor('content');
+</script>
 
 <include file="index:footer" />

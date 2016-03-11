@@ -4,13 +4,43 @@ use Think\Controller;
 
 class ArticleController extends Controller{
 
-	public function index(){
-		
-		$article = M('article');        
-        $this->assign('list',$article->select());
-		$this->assign('empty','<td>未找到数据!</td>');
-		$this->display();
+	public function index(){		
 
+		//绑定分类下拉菜单
+		$cat = new CategoryController();
+		$array = $cat->getTree();
+		//var_dump($array);
+		$this->assign('tree',$array);
+
+		//绑定内容分页列表
+		$article = M('article');
+		import('ORG.Util.Page');		
+		$map = array();
+		$keywords = I('get.keywords');
+		$parent = I('get.parent');
+		$att = I('get.att');
+
+		if($keywords){
+			$map['title'] = array('like','%'.$keywords.'%');				
+		}
+		if($parent)	{
+			$map['parent'] = $parent;
+		}
+		if($att){
+
+		}
+
+		//$sql = $article->where($map)->buildSql();
+		//var_dump($sql);
+
+	    $count	= $article->where($map)->count();
+	    $Page = new \Page($count,20);
+	    $show = $Page->show();
+
+	    $list = $article->where($map)->limit($Page->firstRow.','.$Page->listRows)->select();
+	    $this->assign('list',$list);
+	    $this->assign('page',$show);
+	    $this->display();
 	}
 
 
@@ -41,8 +71,9 @@ class ArticleController extends Controller{
 	 * 修改模板
 	 */
 	public function edit($id=0){		
-		$data = M('article');		
-	    $this->assign('data',$data->find($id));	    
+		
+		$article = M('article');				
+	    $this->assign('article',$article->find($id));	    
 		$this->display();
 	}
 
@@ -69,8 +100,10 @@ class ArticleController extends Controller{
 	/**
 	 * 删除
 	 */
-	public function delete(){
-
+	public function del($id=0){
+		$article = M('article');
+		$article->delete($id);
+		$this->redirect('index');
 	}
 
 }

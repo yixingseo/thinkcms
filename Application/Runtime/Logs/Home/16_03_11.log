@@ -1,0 +1,9 @@
+[ 2016-03-11T08:02:41+08:00 ] ::1 /thinkcms/index.php/Admin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.080042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.051213s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.051461s ]
+ERR: 无法加载控制器:Admin
+

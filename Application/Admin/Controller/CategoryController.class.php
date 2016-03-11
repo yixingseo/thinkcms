@@ -4,12 +4,8 @@ use Think\Controller;
 
 class CategoryController extends Controller{
 
-	public function index(){
-		$category = M('category');
-		$array = $category->select();
-		//计算分类层级
-		$array = $this->getTree($array);		
-		$this->assign('list',$array);		
+	public function index(){		
+		$this->assign('list',$this->getTree());		
 		$this->display();
 	}
 
@@ -85,7 +81,10 @@ class CategoryController extends Controller{
 	 * 无限分类
 	 */
 	public $tree = array();
-	public function getTree(&$array,$pid=0,$deep){		
+	public function getTree($array=array(),$pid=0,$deep){
+		if(!$array){
+			$array = M('category')->select();
+		}
 		foreach ($array as $key => $row) {
 			if($row['parent'] == $pid){
 				$row['tag'] = $this->getTag($deep);

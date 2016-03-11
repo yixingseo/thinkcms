@@ -17,7 +17,7 @@
 
 <body class="abody">
 
-<h3>分类管理 <small><a href="/thinkcms/index.php/Admin/Category/add">添加</a></small></h3>
+<h3>分类管理 <small><a href="/thinkcms/admin.php/Category/add">添加</a></small></h3>
 
 
 <table width="100%" class="table table-bordered table-hover">
@@ -41,11 +41,12 @@
   <td></td>
   <td class="weight"><?php echo ($vo["weight"]); ?></td>
   <td>
-    <a href="/thinkcms/index.php/Admin/Category/add/parent/<?php echo ($vo["id"]); ?>"><i class="fa fa-plus"></i> 添加小类</a>
-    <a href="/thinkcms/index.php/Admin/Category/edit/id/<?php echo ($vo["id"]); ?>"><i class="fa fa-pencil"></i> 修改</a>
-    <a href="/thinkcms/index.php/Admin/Category/delete/id/<?php echo ($vo["id"]); ?>" onclick="return confirm('确定要删除吗？')"><i class="fa fa-trash-o"></i> 删除</a>
+    <a href="/thinkcms/admin.php/Category/add/parent/<?php echo ($vo["id"]); ?>"><i class="fa fa-plus"></i> 添加小类</a>
+    <a href="/thinkcms/admin.php/Category/edit/id/<?php echo ($vo["id"]); ?>"><i class="fa fa-pencil"></i> 修改</a>
+    <a href="/thinkcms/admin.php/Category/delete/id/<?php echo ($vo["id"]); ?>" onclick="return confirm('确定要删除吗？')"><i class="fa fa-trash-o"></i> 删除</a>
   </td>
 </tr><?php endforeach; endif; else: echo "$empty" ;endif; ?>
 
-
 </table>
+
+footer

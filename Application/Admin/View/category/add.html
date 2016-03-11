@@ -1,4 +1,6 @@
 <include file="index:meta" />
+<body class="abody">
+
 <!-- 编辑器 -->
 <script src="__PUBLIC__/ueditor/ueditor.config.js"></script>
 <script src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
@@ -13,7 +15,7 @@
 <div class="container-fluid">
   <div class="row">
     <!-- left -->    
-    <div class="col-xs-8 form-horizontal">
+    <div class="col-xs-9 form-horizontal">
       
       <!-- parent -->
       <div class="form-group">
@@ -108,8 +110,6 @@
   </div>
 </div>
 
-
-
 </form>
 <script>
 var ue = UE.getEditor('content');
@@ -148,6 +148,6 @@ uploader.on( 'uploadSuccess', function( file , response) {
 });
 
 </script>
-
+<div class="clearfix"></div>
 <include file="index/footer" />
 

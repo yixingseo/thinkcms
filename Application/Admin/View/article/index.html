@@ -1,29 +1,73 @@
 <include file="index:meta" />
-<body class="adminbody">
 
+<!-- 编辑器 -->
+<script src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+<script src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
+<body class="abody">
 
 <div class="container-fluid">
-  <h3 class="title">内容列表 <small><a href="__URL__/add">添加</a></small></h3>
-  <table class="table table-hover">
+
+<h3 class="admin-title">内容列表 <small><a href="__URL__/add">添加</a></small></h3>
+
+<form action="" method="get">
+<div class="tools">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-inline">
+          <div class="form-group">
+            <select name="" class="form-control" id="" style="min-width:300px;">
+            <option value="0">所有分类</option>
+            <volist name="tree" id="tree">
+              <option value="{$tree.id}">{$tree.tag}{$tree.title}</option>
+            </volist>  
+            </select>
+          </div>
+          <div class="input-group">          
+            <input type="text" class="form-control" name="keywords" placeholder="请输入关键字..">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">搜索</button>
+            </span>
+          </div><!-- /input-group -->
+        </div>  
+      </div>
+      <div class="col-md-6 text-right">
+        <label class="radio-inline">
+          <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 推荐
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 滚动
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 首页
+        </label>
+      </div>
+    </div>
+</div>
+</form>
+
+<table width="100%" class="table table-bordered table-hover">
     <tr>
-      <th>编号</th>
+      <th style="width:50px" class="text-center"><input type="checkbox"></th>
+      <th style="width:70px;" class="text-center">编号</th>
       <th>标题</th>
       <th>分类</th>
       <th>操作</th>
     </tr>
     <volist name="list" id="vo" empty="$empty">
     <tr>
-      <td>{$vo.id}</td>
-      <td>{$vo.parent}</td>
+      <th class="text-center"><input type="checkbox"></th>
+      <td class="text-center text-success">{$vo.id}</td>      
       <td>{$vo.title}</td>
+      <td>{$vo.parent}</td>
       <td>
-        <a href="edit/id/{$vo.id}">修改</a>
-        <a href="del/{$vo.id}" onclick="return confirm('确定要删除吗？')">删除</a>
+        <a href="__URL__/edit/id/{$vo.id}">修改</a>
+        <a href="__URL__/del/id/{$vo.id}" onclick="return confirm('确定要删除吗？')">删除</a>
       </td>
     </tr>
     </volist>
-  </table>
+</table>
   
+<nav class="text-center"><ul class="pagination">{$page}</div></nav>  
 
 </div>
   

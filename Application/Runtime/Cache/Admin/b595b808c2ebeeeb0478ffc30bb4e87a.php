@@ -5,10 +5,10 @@
 <title>企业网站管理系统</title>
 </head>
 <frameset rows="50,*" cols="*" frameborder="no" border="0" framespacing="0">
-  <frame src="/thinkcms/index.php/Admin/Index/top" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" title="topFrame" />
+  <frame src="/thinkcms/admin.php/Index/top" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" title="topFrame" />
   <frameset cols="200,*" frameborder="no" border="0" framespacing="0">
-    <frame src="/thinkcms/index.php/Admin/Index/sidebar" name="leftFrame" scrolling="No" noresize="noresize" id="leftFrame" title="leftFrame" />
-    <frame src="/thinkcms/index.php/Admin/Index/welcome" name="mainFrame" id="mainFrame" title="mainFrame" />
+    <frame src="/thinkcms/admin.php/Index/sidebar" name="leftFrame" scrolling="No" noresize="noresize" id="leftFrame" title="leftFrame" />
+    <frame src="/thinkcms/admin.php/channel" name="mainFrame" id="mainFrame" title="mainFrame" />
   </frameset>
 </frameset>
 <noframes><body>

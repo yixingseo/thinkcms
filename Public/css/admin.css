@@ -6,10 +6,12 @@ html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}artic
     border-bottom: none;
 }
 
+
+
 body{font-family:"\5FAE\8F6F\96C5\9ED1","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"\5B8B\4F53";}
 .logo{background:url(../images/logo.jpg) left top no-repeat;height:54px;}
 .header{background:#3A6EA5;height:54px;text-align:left;padding:0 10px 0 0;position:relative}
-.abody{padding:20px;}
+.abody{padding:20px 50px;}
 .login{width:400px;margin:50px auto}
 .ie_msg{}
 textarea.code{line-height: 1em;color:#006699;}

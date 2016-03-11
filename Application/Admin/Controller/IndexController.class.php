@@ -11,20 +11,6 @@ class IndexController extends Controller {
     }
 
     /**
-     * 框架头部
-     */
-    public function top(){
-    	$this->display();
-    }
-
-    /**
-     * 框架侧边栏
-     */
-    public function sidebar(){
-    	$this->display();
-    }
-
-    /**
      * 管理首页
      */
     public function welcome(){

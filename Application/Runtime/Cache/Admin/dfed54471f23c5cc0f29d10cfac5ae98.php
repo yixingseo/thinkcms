@@ -14,6 +14,8 @@
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
+<body class="abody">
+
 <!-- 编辑器 -->
 <script src="/thinkcms/Public/ueditor/ueditor.config.js"></script>
 <script src="/thinkcms/Public/ueditor/ueditor.all.min.js"></script>
@@ -28,7 +30,7 @@
 <div class="container-fluid">
   <div class="row">
     <!-- left -->    
-    <div class="col-xs-8 form-horizontal">
+    <div class="col-xs-9 form-horizontal">
       
       <!-- parent -->
       <div class="form-group">
@@ -161,3 +163,5 @@ uploader.on( 'uploadSuccess', function( file , response) {
 });
 
 </script>
+
+footer

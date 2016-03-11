@@ -10,19 +10,20 @@
 <link rel="stylesheet" type="text/css" href="/thinkcms/Public/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="/thinkcms/Public/css/admin.css">
 <!-- js -->
-<script src="/thinkcms/Public/js/jquery.min.js"></script>
-<script src="/thinkcms/Public/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-
-
 </head>
-<body class="adminbody">
+<!-- 编辑器 -->
+<script src="/thinkcms/Public/ueditor/ueditor.config.js"></script>
+<script src="/thinkcms/Public/ueditor/ueditor.all.min.js"></script>
+<body class="abody">
 
-<form action="/thinkcms/index.php/Admin/Article/update" method="post">
-<input type="hidden" name="id" value="<?php echo ($data["id"]); ?>">
+<form action="/thinkcms/admin.php/Article/update" method="post">
+<input type="hidden" name="id" value="<?php echo ($article["id"]); ?>">
 <div class="container-fluid">
 
-  <h3 class="title">内容管理 <small><a href="/thinkcms/index.php/Admin/Article/index">列表</a></small></h3>
+  <h3 class="admin-title">内容管理 <small><a href="/thinkcms/admin.php/Article/index">列表</a></small></h3>
   <div class="row">
       <!-- left -->
       <div class="col-xs-9 form-horizontal">
@@ -41,7 +42,7 @@
             <div class="form-group">
                 <label for="" class="col-sm-2 control-label">* 内容标题</label>
                 <div class="col-sm-10">
-                    <input name="title" type="text" id="title" value="<?php echo ($data["title"]); ?>" placeholder="内容标题" class="form-control require" />
+                    <input name="title" type="text" id="title" value="<?php echo ($article["title"]); ?>" placeholder="内容标题" class="form-control require" />
                 </div>
             </div>
 
@@ -49,7 +50,7 @@
             <div class="form-group">
                 <label for="" class="col-sm-2 control-label">内容摘要</label>
                 <div class="col-sm-10">
-                    <textarea name="info" class="form-control" id="info" placeholder="内容摘要信息"><?php echo ($data["info"]); ?></textarea>
+                    <textarea name="info" class="form-control" id="info" placeholder="内容摘要信息"><?php echo ($article["info"]); ?></textarea>
                 </div>
             </div>
 
@@ -78,7 +79,7 @@
         <div class="col-xs-3">                
             <div class="form-group">
                 <label for="">添加时间</label>
-                <input name="insert_date" type="text" id="insert_date" value="<?php echo ($data["addtime"]); ?>" class="form-control" />
+                <input name="insert_date" type="text" id="insert_date" value="<?php echo ($article["addtime"]); ?>" class="form-control" />
             </div>
 
             <div class="form-group">
@@ -88,12 +89,12 @@
 
             <div class="form-group">
                 <label for="">SEO关键词</label>
-                <input name="keywords" type="text" id="keywords" value="<?php echo ($data["keywords"]); ?>" class="form-control" />
+                <input name="keywords" type="text" id="keywords" value="<?php echo ($article["keywords"]); ?>" class="form-control" />
             </div>
 
             <div class="form-group">
                 <label for="">SEO描述</label>
-                <textarea name="description" class="form-control" id="description"><?php echo ($data["description"]); ?></textarea>
+                <textarea name="description" class="form-control" id="description"><?php echo ($article["description"]); ?></textarea>
             </div>
 
             <div class="form-group">
@@ -133,5 +134,8 @@
 </div>
 
 </form>  
-</body>
-</html>
+
+<script>
+    var ue = UE.getEditor('content');
+</script>
+footer

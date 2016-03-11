@@ -14,14 +14,18 @@
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
-</head>
+<body class="abody">
+
+<!-- 编辑器 -->
+<script src="/thinkcms/Public/ueditor/ueditor.config.js"></script>
+<script src="/thinkcms/Public/ueditor/ueditor.all.min.js"></script>
 <body class="adminbody">
 
-<form action="/thinkcms/index.php/Admin/Article/insert" method="post">
+<form action="/thinkcms/admin.php/Article/insert" method="post">
 
 <div class="container-fluid">
 
-  <h3 class="title">内容管理 <small><a href="/thinkcms/index.php/Admin/Article/index">列表</a></small></h3>
+  <h3 class="admin-title">内容管理 <small><a href="/thinkcms/admin.php/Article/index">列表</a></small></h3>
   <div class="row">
       <!-- left -->
       <div class="col-xs-9 form-horizontal">
@@ -131,4 +135,10 @@
   
 </div>
 
-</form>
+</form>  
+
+<script>
+    var ue = UE.getEditor('content');
+</script>
+
+footer

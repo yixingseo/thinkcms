@@ -22,7 +22,7 @@
 <div class="tools">     
 <div class="form-inline">
   <div class="form-group">
-    <a href="/thinkcms/index.php/Admin/Db/backup" class="btn btn-primary">备份当前数据库</a>
+    <a href="/thinkcms/admin.php/Db/backup" class="btn btn-primary">备份当前数据库</a>
   </div>
 </div>   
 
@@ -38,10 +38,12 @@
     <td><span class="text-primary"><?php echo ($vo["name"]); ?></span></td>
     <td><?php echo ($vo["size"]); ?>b</td>
     <td class="listview_action">
-    <a href="/thinkcms/index.php/Admin/Db/import/file/<?php echo ($vo["name"]); ?>"><i class="fa fa-undo"></i> 恢复</a>&nbsp;&nbsp;
-    <a href="/thinkcms/index.php/Admin/Db/del/file/<?php echo ($vo["name"]); ?>" onclick="return confirm('确定要删除吗')"><i class="fa fa-trash"></i> 删除</a>
+    <a href="/thinkcms/admin.php/Db/import/file/<?php echo ($vo["name"]); ?>"><i class="fa fa-undo"></i> 恢复</a>&nbsp;&nbsp;
+    <a href="/thinkcms/admin.php/Db/del/file/<?php echo ($vo["name"]); ?>" onclick="return confirm('确定要删除吗')"><i class="fa fa-trash"></i> 删除</a>
     </td>
   </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 
 </table>
 </body>
+
+footer
